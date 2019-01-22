@@ -1,17 +1,18 @@
-from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 
-from core.views import transactionView
+from core.views import transactionView, loginView
 from core.views import userView
+
+app_name = 'block3'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', userView.login),
-    url('register/', userView.register),
-    url('wallet/', userView.wallet),
-    url('history/', transactionView.history),
-    url('sendTransaction/', transactionView.sendTransaction),
-    url('findHash/', transactionView.findHash),
-    url('receivedTransaction/', transactionView.receivedTransaction),
+    path('login/', loginView.login),
+    path('register/', loginView.register),
+    path('wallet/', userView.wallet),
+    path('history/', transactionView.history),
+    path('sendTransaction/', transactionView.sendTransaction),
+    path('findHash/', transactionView.findHash),
+    path('receivedTransaction/', transactionView.receivedTransaction),
 ]
