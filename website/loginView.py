@@ -33,4 +33,4 @@ def register(request):
         if User.objects.filter(email=email):
             return render(request, "website/login.html")
         user.save()
-        return HttpResponse("Register done with success", status=200)
+        return render(request, "website/login.html")
